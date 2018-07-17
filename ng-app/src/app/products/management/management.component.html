@@ -1,0 +1,20 @@
+<div *ngFor="let product of products">
+  <div class="col-sm-6 col-md-4" *ngIf="product.show == true">
+    <div class="col">
+      <img class="thumbnail img-responsive" [src]="product.image" [title]="product.name">
+      <div class="caption">
+        <div role="button" (click)="showDetail(product)">
+          <h3>{{product.name}}</h3>
+        </div>
+        <p>{{product.description}}</p>
+        <h4>{{product.price}}฿</h4>
+        <p>
+          <a class="btn" role="button" (click)="goToUpdateProduct(product)">Update</a>
+          <a class="btn" role="button" (click)="deleteProduct(product)">Delete</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+

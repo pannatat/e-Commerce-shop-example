@@ -1,0 +1,26 @@
+<div class="row panel-body">
+  <div class="col-md-8 col-sm-8">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Search by date..." [(ngModel)]="search">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button" (click)="onSearch()">Go!</button>
+      </span>
+    </div>
+  </div>
+</div>
+
+<div *ngFor="let transaction of transactions" class="row">
+  <div class="thumbnail col-sm-6">
+    <div clsas="col-sm-6 col-md-4">
+      <div class="caption">
+        Transaction ID: {{transaction.id}}
+      </div>
+      <div class="caption" role="button">
+        <h3 (click)="goToDetail(transaction)">Date:{{transaction.date}}</h3>
+      </div>
+      <div class="caption">
+        <h4>Type: {{transaction.payment}}</h4>
+      </div>
+    </div>
+  </div>
+</div>

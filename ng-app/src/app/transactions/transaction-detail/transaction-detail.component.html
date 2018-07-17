@@ -1,0 +1,32 @@
+<div [hidden]="!isNoData">
+  <div class="alert alert-danger" role="alert">There is no data for the specific id</div>
+</div>
+
+<div [hidden]="isNoData" >
+  <div class="thumbnail col-sm-6">
+    <div class="">
+      <div class="caption">
+        <h3>Date:{{transaction.date}}</h3>
+      </div>
+      <div class="caption">
+        <h4>Type:{{transaction.payment}}</h4>
+      </div>
+      <div *ngFor="let product of transaction.productList">
+        <div>
+          <label class="control-label">ID:</label>
+          {{product.productId}}
+        </div>
+        <div>
+          <label class="control-label">Name: </label>
+          {{product.name}}
+        </div>
+        <div>
+          <label class="control-label">Price: </label>
+          {{product.price}}
+        </div>
+        --------------------------------------------------------------
+      </div>
+    </div>
+  </div>
+</div>
+

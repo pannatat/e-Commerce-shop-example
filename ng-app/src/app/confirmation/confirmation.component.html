@@ -1,0 +1,21 @@
+<div *ngFor="let product of products">
+  <div class="col-sm-6 col-md-4" *ngIf="product.selected == true">
+    <div class="col">
+      <img class="thumbnail img-responsive" [src]="product.image" [title]="product.name">
+      <div class="caption">
+        <div role="button" (click)="showDetail(product)">
+          <h3>{{product.name}}</h3>
+        </div>
+        <p>{{product.description}}</p>
+        <h4>{{product.price}}฿</h4>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+<button class="btn btn-primary" (click)="goToSlipPayment(product)">Pay by cash</button>
+<button class="btn btn-primary" (click)="goToPaypalPayment(product)">Pay by Paypal</button>
+
+</div>
+
+

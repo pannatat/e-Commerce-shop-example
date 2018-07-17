@@ -1,0 +1,38 @@
+<div class="row panel-body">
+  <div class="col-md-8 col-sm-8">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Search for name..." [(ngModel)]="search">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button" (click)="onSearch()">Pew Pew!</button>
+      </span>
+    </div>
+  </div>
+</div>
+<div>
+  <p>Price filter:
+  <input type="text" placeholder="Search for Min..." id="min" [(ngModel)]="min">
+  -
+  <input type="text" placeholder="Search for Max..." id="max" [(ngModel)]="max"> Bath
+</div>
+
+<div class="container">
+  <div *ngFor="let product of products">
+    <div *ngIf="product.show == true">
+      <div class="col-md-5" *ngIf="product.price >= min && product.price <= max">
+        <img class="thumbnail img-responsive" [src]="product.image" [title]="product.name">
+        <div class="caption">
+          <div>
+            <h3>{{product.name}}</h3>
+          </div>
+          <p>{{product.description}}</p>
+          <h4>{{product.price}} Bath</h4>
+          <p>
+            <a class="btn" role="button" (click)="showDetail(product)">Detail</a>
+            <a class="btn btn-primary" role="button" (click)="addToCart(product)">Add to Cart</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

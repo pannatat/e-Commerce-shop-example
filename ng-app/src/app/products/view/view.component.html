@@ -1,0 +1,51 @@
+<div [hidden]="!isNoData">
+  <div class="alert alert-danger" role="alert">There is no data for the specific id</div>
+</div>
+
+<div [hidden]="isNoData" >
+  <div class="container">
+    <div class="row mx-1 my-3 bg-primary">
+      <h4 class="mx-auto py-2">Product Detail: {{product?.name}}</h4>
+    </div>
+    <div class="row mt-5">
+      <div class="col-md-5">
+        <img class="img-thumbnail" [src]="product?.image" alt="Card image cap">
+      </div>
+      <div class="col-md-7">
+        <div class="row ml-3">
+          <div class="col-md-4">
+            <p>Product Id: </p>
+          </div>
+          <div class="col-md-8">
+            <p>{{product?.productId}}</p>
+          </div>
+
+          <div class="col-md-4">
+            <p>Product Name: </p>
+          </div>
+          <div class="col-md-8">
+            <p>{{product?.name}}</p>
+          </div>
+
+          <div class="col-md-4">
+            <p>Product Price: </p>
+          </div>
+          <div class="col-md-8">
+            <p>${{product?.price}}</p>
+          </div>
+
+          <div class="col-md-4">
+            <p>Product Detail: </p>
+          </div>
+          <div class="col-md-8">
+            <p>{{product?.description}}</p>
+          </div>
+        </div>
+        <!--<div class="row d-flex justify-content-center my-4">-->
+        <!--<button class="btn btn-outline-primary" (click)="addToCard()">Add to Cart</button>-->
+        <!--</div>-->
+      </div>
+    </div>
+  </div>
+</div>
+

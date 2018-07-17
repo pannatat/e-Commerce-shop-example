@@ -1,0 +1,18 @@
+<div class="container">
+  <li role="presentation"  routerLinkActive="active">
+    <a routerLink="/list" class="navbar-brand">Porring game Store</a>
+  </li>
+  <ul class="nav justify-content-center  nav-tabs ">
+    <li><a class="list-group-item" routerLink="/list">List</a></li>
+    <li role="presentation" class="nav-item" routerLinkActive="active">
+      <a routerLink="/cart" class="nav-link"> Shopping Cart <span *ngIf="numItems" class="badge badge-pill badge-danger">{{numItems}}</span></a>
+    </li>
+    <li role="presentation" routerLinkActive="active"><a routerLink="/register">Register</a></li>
+    <li><a class="list-group-item list-group-item-warning" routerLink="/add-product" *ngIf="hasRole('SHOPKEEPER')">Add Product</a></li>
+    <li><a class="list-group-item list-group-item-warning" routerLink="/manage-product" *ngIf="hasRole('SHOPKEEPER')">Manage Products</a></li>
+    <li><a class="list-group-item list-group-item-warning" routerLink="/list-of-transactions" *ngIf="hasRole('SHOPKEEPER')">Transactions History</a></li>
+    <li><a class="list-group-item list-group-item-warning" routerLink="/actor" *ngIf="hasRole('ADMIN')">Customers and Shopkeepers</a></li>
+    <li *ngIf="!(hasRole('CUSTOMER')||hasRole('USER')||hasRole('SHOPKEEPER')||hasRole('ADMIN'))" class="navbar-brand navbar-right btn btn-default"  (click)="goToLogin()">Login</li>
+    <li *ngIf="hasRole('CUSTOMER')||hasRole('USER')||hasRole('SHOPKEEPER')||hasRole('ADMIN')" class="navbar-brand navbar-right btn btn-default"  (click)="goToLogout()">Logout</li>
+  </ul>
+</div>

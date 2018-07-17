@@ -1,0 +1,22 @@
+<div class="row panel-body">
+  <div class="col-md-8 col-sm-8">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Search for name..." [(ngModel)]="search">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button" (click)="onSearch()">Go!</button>
+      </span>
+    </div>
+  </div>
+</div>
+
+<div *ngFor="let actor of actors" class="row">
+  <div class="col-sm-6 col-md-4" *ngIf="actor">
+    <div class="thumbnail">
+      <div class="caption">
+        <h3>{{product.name}}</h3>
+      </div>
+    </div>
+  </div>
+</div>
+
+

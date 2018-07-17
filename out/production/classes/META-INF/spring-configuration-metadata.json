@@ -1,0 +1,42 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "camt.cbsd.finalproject.config.DataLoader",
+      "name": "server",
+      "type": "camt.cbsd.finalproject.config.DataLoader"
+    },
+    {
+      "sourceType": "camt.cbsd.finalproject.service.ActorServiceImpl",
+      "name": "server",
+      "type": "camt.cbsd.finalproject.service.ActorServiceImpl"
+    },
+    {
+      "sourceType": "camt.cbsd.finalproject.service.TransactionServiceImpl",
+      "name": "server",
+      "type": "camt.cbsd.finalproject.service.TransactionServiceImpl"
+    },
+    {
+      "sourceType": "camt.cbsd.finalproject.service.ProductServiceImpl",
+      "name": "server",
+      "type": "camt.cbsd.finalproject.service.ProductServiceImpl"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "camt.cbsd.finalproject.service.ActorServiceImpl",
+      "name": "server.actors",
+      "type": "java.util.List<camt.cbsd.finalproject.entity.Actor>"
+    },
+    {
+      "sourceType": "camt.cbsd.finalproject.service.ProductServiceImpl",
+      "name": "server.products",
+      "type": "java.util.List<camt.cbsd.finalproject.entity.Product>"
+    },
+    {
+      "sourceType": "camt.cbsd.finalproject.service.TransactionServiceImpl",
+      "name": "server.transactions",
+      "type": "java.util.List<camt.cbsd.finalproject.entity.Transaction>"
+    }
+  ]
+}

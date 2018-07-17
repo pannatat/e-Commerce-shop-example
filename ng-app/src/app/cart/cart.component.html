@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="row mb-1">
+    <h5>Porring Game Store</h5>
+  </div>
+  <div class="row mb-3">
+    <div class="col-md-8">
+      <div class="row">
+        <div *ngFor="let product of products" class="col-md-12 mb-2 bg-light">
+          <div class="row d-flex h-100">
+            <div *ngIf="product.selected == true">
+              <div class="col-md-3 align-self-center">
+                <img [src]="product.image" class="img-thumbnail">
+              </div>
+              <div class="col-md-8 align-self-center">
+                <div class="row">
+                  <div class="col-md-4">Item:</div>
+                  <div class="col-md-8" role="button" (click)="showDetail(product)">{{product.name}}
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">Description:</div>
+                  <div class="col-md-8">{{product.description}}</div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">Price:</div>
+                  <div class="col-md-8">{{product.price}} Bath</div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">Amount:</div>
+                  <div class="col-md-8"><input type="number" class="input-amount form-control" value="0" name="Amount"></div>
+                </div>
+              </div>
+              <div class="col-md-1 align-top mt-3">
+                <button class="close" (click)="removeSelected(product)"><span>&times;</span></button>
+              </div>
+            </div>
+          </div>
+          <h1>                           </h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="btn col-lg-offset-8" type="submit" (click)="checkout(products)">Confirm</button>
+</div>
+
+
